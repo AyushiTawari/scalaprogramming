@@ -118,3 +118,38 @@ Result: false
 30
 Result: false
 
+
+
+
+object PrimeNoSum {
+ def test(x:Int) = 
+{
+var primesum=0
+for(i <- 2 to x)
+{
+var sum=0
+for(j<-2 to i)
+if(i%j==0)
+sum=sum+j
+if(sum==i)
+{
+primesum=primesum+i
+}
+}
+println("Result of "+x+" is "+primesum)
+}
+def main(args: Array[String]): Unit= {
+  test(115); 
+  test(200); 
+  test(250); 
+  test(70); 
+}
+
+}
+
+Output:
+
+Result of 115 is 1593
+Result of 200 is 4227
+Result of 250 is 5830
+Result of 70 is 568
