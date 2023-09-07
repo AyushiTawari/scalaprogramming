@@ -68,3 +68,53 @@ Result: x
 
 
 
+object scala_basic { 
+  def test(x:Int) : Boolean = 
+  { 
+    Math.abs(100 - x) <= 20 || Math.abs(300 - x) <= 20 
+  } 
+  def main(args: Array[String]): Unit = 
+  { 
+    println("Result: " + test(115)); 
+    println("Result: " + test(200)); 
+    println("Result: " + test(250)); 
+    println("Result: " + test(70)); 
+  }
+}
+
+Output:
+Result: true
+Result: false
+Result: false
+Result: false
+
+
+
+
+object scala_basic { 
+  def test(x:Int) : Boolean = 
+  { 
+    val d=Math.abs(100 - x)
+    println(d)
+    Math.abs(100 - x) <= 20 || Math.abs(300 - x) <= 20
+    
+  } 
+  def main(args: Array[String]): Unit = 
+  { 
+    println("Result: " + test(115)); 
+    println("Result: " + test(200)); 
+    println("Result: " + test(250)); 
+    println("Result: " + test(70)); 
+  }
+}
+
+Output:
+15
+Result: true
+100
+Result: false
+150
+Result: false
+30
+Result: false
+
