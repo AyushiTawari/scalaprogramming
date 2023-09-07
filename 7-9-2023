@@ -1,0 +1,45 @@
+object scala_basic { 
+  def test(x:Int, y:Int) : Boolean =
+  { 
+    x == 30 || y == 30 || x + y == 30
+  } 
+  def main(args: Array[String]): Unit = 
+  { 
+    println("Result: " + test(30, 0)); 
+    println("Result: " + test(25, 5)); 
+    println("Result: " + test(30, 20));
+    println("Result: " + test(25, 20)); 
+  }
+}
+
+
+Output:
+Result: true
+Result: true
+Result: true
+Result: false
+
+
+object scala_basic { 
+  def test(x:Int, y:Int) : Int =
+  { 
+    """x == 30 || y == 30 || x + y == 30"""
+    if (x>y) x else 0
+    
+
+  } 
+  def main(args: Array[String]): Unit = 
+  { 
+    println("Result: " + test(30, 0)); 
+    println("Result: " + test(25, 5)); 
+    println("Result: " + test(3, 20));
+    println("Result: " + test(25, 20)); 
+  }
+}
+
+
+Output:
+Result: 30
+Result: 25
+Result: 0
+Result: 25
