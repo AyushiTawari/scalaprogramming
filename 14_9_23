@@ -1,0 +1,66 @@
+The "MathUtils" object contains the factorial method. 
+This method calculates the factorial of a given number using recursion. 
+If the number is 0 or 1, it returns 1. 
+Otherwise, it recursively calls itself with n - 1 and multiplies the result by n. 
+The "Main" object contains the main method where you can test the factorial method. 
+In this example, it calculates the factorial of the number 4 and 10 and prints the result.
+
+Code:
+object MathUtils { 
+  def factorial(n: Int): BigInt = { 
+    if (n == 0 || n == 1) {
+      1 
+    } else { 
+      n * factorial(n - 1) 
+      } 
+    }
+}
+object Main { 
+  def main(args: Array[String]): Unit = { 
+    val number1 = 4 
+    val result1 = MathUtils.factorial(number1)
+  println(s"The factorial of $number1 is: $result1") 
+  val number2 = 10 
+  val result2 = MathUtils.factorial(number2) 
+  println(s"The factorial of $number2 is: $result2") 
+  }
+}   
+
+Output:
+The factorial of 4 is: 24
+The factorial of 10 is: 3628800
+
+Code2:
+object MathUtils { 
+  def factorial(n: Int): BigInt = { 
+    if (n == 0 || n == 1) {
+      1 
+    } else { 
+      n * factorial(n - 1) 
+      } 
+    }
+}
+object Main { 
+  def main(args: Array[String]): Unit = { 
+    val number1 = 4 
+    val result1 = MathUtils.factorial(number1)
+    println(s"The factorial of $number1 is: $result1") 
+    val number2 = 10 
+    val result2 = MathUtils.factorial(number2) 
+    println(s"The factorial of $number2 is: $result2")
+    val result3 = MathUtils.factorial(0) 
+    println(s"The factorial of 0 is: $result3")
+    var result4 = MathUtils.factorial(1) 
+    println(s"The factorial of 1 is: $result4")
+    result4 = MathUtils.factorial(5) 
+    println(s"The factorial of 5 is: $result4")
+  }
+}    
+
+Output:
+
+The factorial of 4 is: 24
+The factorial of 10 is: 3628800
+The factorial of 0 is: 1
+The factorial of 1 is: 1
+The factorial of 5 is: 120
