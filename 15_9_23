@@ -1,0 +1,36 @@
+Code1:
+class BankAccount(val accountNumber: String, var balance: Double) { 
+  def deposit(amount: Double): Unit = { 
+    balance += amount 
+    println(s"Deposited $amount. New balance: $balance")
+  }
+  def withdraw(amount: Double): Unit = {
+    if (amount <= balance) { 
+    balance -= amount 
+    println(s"Withdrew $amount. New balance: $balance") 
+  } 
+  else 
+  { 
+    println(s"Want to withdraw $amount? Insufficient balance!") 
+  } 
+  }
+}
+object BankAccountApp { 
+    def main(args: Array[String]): Unit = { 
+    val account = new BankAccount("SB-1234", 1000.0)
+    println(s"Account Number: ${account.accountNumber}")  
+    println(s"Initial Balance: ${account.balance}")
+    account.deposit(500.0) 
+    account.withdraw(200.0) 
+    account.withdraw(2000.0) 
+  }
+}
+/*constructor:predefined in a fucntion,property:attribute,Unit:no return type*/
+
+Output:
+
+Account Number: SB-1234
+Initial Balance: 1000.0
+Deposited 500.0. New balance: 1500.0
+Withdrew 200.0. New balance: 1300.0
+Want to withdraw 2000.0? Insufficient balance!
