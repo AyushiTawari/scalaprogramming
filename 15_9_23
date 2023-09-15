@@ -34,3 +34,55 @@ Initial Balance: 1000.0
 Deposited 500.0. New balance: 1500.0
 Withdrew 200.0. New balance: 1300.0
 Want to withdraw 2000.0? Insufficient balance!
+
+
+class BankAccount(val accountNumber: String, var balance: Double) { 
+  def deposit(amount: Double): Unit = { 
+    balance += amount 
+    println(s"Deposited $amount.\nNew balance: $balance\n")
+  }
+  def withdraw(amount: Double): Unit = {
+    if (amount <= balance) { 
+    balance -= amount 
+    println(s"Withdrew $amount.\nNew balance: $balance\n") 
+  } 
+  else 
+  { 
+    println(s"Want to withdraw $amount? Insufficient balance!") 
+  } 
+  }
+  def interest(amount:Double, R:Double, time:Double): Unit= {
+   var inter=(amount*R*time)/(12*100)
+  println(s"\nInterest is $inter for $balance")
+  }
+}
+object BankAccountApp { 
+    def main(args: Array[String]): Unit = { 
+    val account = new BankAccount("AYU-333", 1000.0)
+    println(s"Account Number: ${account.accountNumber}")  
+    println(s"Initial Balance: ${account.balance}")
+    println()
+    account.deposit(500.0) 
+    account.withdraw(200.0) 
+    account.withdraw(2000.0) 
+    //account.withdraw(29000.0)//
+    var P=account.balance
+    account.interest(P,3.5,6)
+  }
+}
+
+Output:
+
+Account Number: AYU-333
+Initial Balance: 1000.0
+
+Deposited 500.0.
+New balance: 1500.0
+
+Withdrew 200.0.
+New balance: 1300.0
+
+Want to withdraw 2000.0? Insufficient balance!
+
+Interest is 22.75 for 1300.0
+
