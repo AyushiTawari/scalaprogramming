@@ -1,0 +1,38 @@
+object Change { 
+  def Int_type(x:Int): String = {
+      val result=x.toString
+      println("Type of result is:"+result.getClass)
+      result
+  }
+  def ASCII_type(x:Char): Int = {
+      val result=x.toInt
+      println("Type of result is:"+result.getClass)
+      result
+  }
+}
+object Main { 
+  def main(args: Array[String]): Unit = {
+    print("Type number:")
+    var input:Int =scala.io.StdIn.readInt()
+    println(input)
+    print("Type datatype to which it has to be changed:")
+    val type1=scala.io.StdIn.readLine()
+    println(type1)
+    println("Result is "+Change.Int_type(input))
+    
+    print("Type character:")
+    var input1:Char=scala.io.StdIn.readChar()
+    println(input1)
+    println("Result is "+Change.ASCII_type(input1))
+  }
+}
+
+Output:
+
+Type number:25
+Type datatype to which it has to be changed:String
+Type of result is:class java.lang.String
+Result is 25
+Type character:A
+Type of result is:int
+Result is 65
