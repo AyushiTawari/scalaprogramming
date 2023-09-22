@@ -1,0 +1,20 @@
+object FindDifferenceBetweenMapsExample { 
+  def main(args: Array[String]): Unit = {
+  // Create two maps
+  val map1 = Map("Red" -> 1, "Green" -> 4, "Blue" -> 2, "Orange" -> 3) 
+  val map2 = Map("Red" -> 5, "Green" -> 4, "Blue" -> 2, "Pink" -> 3)
+  
+  // Print the original map 
+  println("Original map1: " + map1) 
+  println("Original map2: " + map2)
+  // Find the difference between the maps 
+  val difference = map1 -- map2.keySet
+  // Print the result 
+  println(s"The difference between the maps is: $difference") 
+  }
+}
+Output:
+
+Original map1: Map(Red -> 1, Green -> 4, Blue -> 2, Orange -> 3)
+Original map2: Map(Red -> 5, Green -> 4, Blue -> 2, Pink -> 3)
+The difference between the maps is: Map(Orange -> 3)
