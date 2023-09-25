@@ -1,0 +1,61 @@
+sealed trait Color //trait(scala)=interface(java) 
+
+case object Red extends Color 
+case object Green extends Color 
+case object Blue extends Color 
+case object Orange extends Color
+case object Purple extends Color
+
+object ColorApp { 
+  def main(anything: Array[String]): Unit = { 
+    val myColor: Color = Purple
+    //val myColor: Color = Blue 
+    printColor(myColor) 
+  } 
+  
+  def printColor(color: Color): Unit = color match { 
+    case Red => println("The color is Red.") 
+    case Green => println("The color is Green.") 
+    case Blue => println("The color is Blue.") 
+    case Orange => println("The color is Orange.")
+    case _ => println("Unknown color.") 
+  } 
+}
+//sealed:all child extensions should be in same program. 
+//An object is a class that has exactly one instance.
+
+Output:
+
+Unknown color.
+
+
+
+sealed trait Color //trait(scala)=interface(java) 
+
+case object Red extends Color 
+case object Green extends Color 
+case object Blue extends Color 
+case object Orange extends Color
+case object Purple extends Color
+
+object ColorApp { 
+  def main(anything: Array[String]): Unit = { 
+    val myColor: Color = Blue
+    //val myColor: Color = Blue 
+    printColor(myColor) 
+  } 
+  
+  def printColor(color: Color): Unit = color match { 
+    case Red => println("The color is Red.") 
+    case Green => println("The color is Green.") 
+    case Blue => println("The color is Blue.") 
+    case Orange => println("The color is Orange.")
+    case _ => println("Unknown color.") 
+  } 
+}
+//sealed:all child extensions should be in same program. 
+//An object is a class that has exactly one instance.
+
+Output:
+
+The color is Blue.
